@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<style>
+
+h1 {
+border: 2px solid blue;
+font-family: "Lucida Console", "Courier New", monospace;
+color: powderblue;
+text-align: center;
+
+
+}
+
+
+</style>
+
+    <link rel="stylesheet href="styles.css">
+
+
+
+        <style type="text/css">
+        .sidenav {
+            height:100%;
+            width:170px;
+            position: fixed;
+            z-index:1;
+            top:0;
+            left:0;
+            background-color:#111;
+            overflow-x: :hidden;
+            padding-top:20px;
+
+        }
+
+        .sidenav a {
+            padding:6px 8px 6px 16px;
+            text-decoration: none;
+            font-size:20px;
+            color: red;
+            display:block;
+            font-family: "Lucida Console", "Courier New", monospace;
+
+        }
+
+        .sidenav a:hover{
+            color:#f1f1f1;
+        }
+
+        .main{
+        margin-left:160px;
+        padding: 0px 10px;
+        }
+
+
+
+
+    </style>
+
+
+    <title>{% block title %} UKpraca {% endblock %}</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'UKpracaApp/styles.css' %}">
+
+
+
+
+</head>
+<body>
+
+
+        <div class="sidenav">
+            <a href="/home"> Strona główna </a>
+            <a href="/list"> Utwórz zgłoszenie </a>
+            <a href="/contact"> Kontakt </a>
+            <h1>StylIKlasa</h1>
+
+        </div>
+
+
+
+        <div id="content", name="content", class="main">
+
+            {% block content %}
+
+
+
+            {% endblock %}
+
+
+
+
+        </div>
+
+</body>
+</html>
