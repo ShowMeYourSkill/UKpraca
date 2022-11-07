@@ -20,14 +20,25 @@
 <div>
 
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{form}}                                   <--!-->???? co to jest
+    <label >
+        Imię:
+        <input type="text"
+               name="userName">
+    </label>
+
+    <label>
+        Nazwisko:
+        <input type="text"
+               name="userSurname">
+
+    </label>
+
+    <label>
+        <input type="submit" value="Wyślij"
+
+    </label>
 
 
-
-        <input type="submit" value="Submit" />
-    </form>
 </div>
 
 
