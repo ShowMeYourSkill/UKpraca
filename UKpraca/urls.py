@@ -22,7 +22,7 @@ urlpatterns = [
     # path('first/', include('UKpracaApp.urls')),
     path('', views.homepage, name="homepage"),
     path('base/', views.base_view),
-    path('list/', views.list_view, name='insert_praca_user'),
+    path('list/', views.get_user_name, name='insert_praca_user'),
     path('home/', views.homepage),
     path('contact/', views.contact_view),
     path('create-user/', views.createUser, name="create-user"),

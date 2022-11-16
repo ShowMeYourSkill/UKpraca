@@ -27,8 +27,8 @@ def contact_view(request):
 
 
 def insert_praca_user(request: HttpRequest):
-    goahead = User(name=request.POST['name'])
-    # goahead = User(surname=request.POST['surname'])
+    goahead = User(userName=request.POST['userName'])
+    goahead = User(userSurname=request.POST['userSurname'])
     # goahead = User(experience=request.POST['experience'])
     # goahead = User(preferences=request.POST['preferences'])
     goahead.save()
@@ -40,7 +40,7 @@ def createUser(request):
     form = UserForm()
 
     context = {'form': form}
-    return render(request, 'UKpraca/index.html', context)
+    return render(request, 'UKpracaApp/index.html', context)
 
     # goahead = User(request.POST['name'])
     # goahead.save()
@@ -50,28 +50,28 @@ def createUser(request):
 # return render(request, 'UKpracaApp/index.html)
 
 
-def get_user_name(request):
-    if request.method == "POST":
-        name = request.POST.get("userName")  # jeśli nie ma, to None
-        surname = request.POST.get("userSurname")  # jeśli nie ma to None
-        if name and surname:
-            html = "<html><body>Zalogowany {} {}</body></html>".format(name,
-                                                                       surname)
-        else:
-            html = "<html><body>Błąd!</body></html>"
-        return HttpResponse(html)
-    else:
-        return render(request, 'UKpraca/index.html')
-
 # def get_user_name(request):
 #     if request.method == "POST":
-#         form = UserForm(request.POST)
-#         if form.is_valid():
-#             try:
-#                 form.save()
-#                 return redirect("/widok")
-#             except:
-#                 pass
+#         name = request.POST.get("userName")  # jeśli nie ma, to None
+#         surname = request.POST.get("userSurname")  # jeśli nie ma to None
+#         if name and surname:
+#             html = "<html><body>Zalogowany {} {}</body></html>".format(name,
+#                                                                        surname)
+#         else:
+#             html = "<html><body>Błąd!</body></html>"
+#         return HttpResponse(html)
 #     else:
-#         form = UserForm()
-#     return render(request, "UKpraca/idex.html")
+#         return render(request, 'UKpracaApp/index.html')
+
+def get_user_name(request):
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect("/list")
+            except:
+                pass
+    else:
+        form = UserForm()
+    return render(request, "UKpracaApp/index.html")

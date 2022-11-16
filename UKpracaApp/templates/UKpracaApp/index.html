@@ -15,30 +15,39 @@
 <link rel="stylesheet href="styles.css">
 
 </head>
+
+
+
+
 <body class="bg-light">
 
-    <form method="POST" action="">
-    {% csrf_token %}
+    <form method="POST" action="/list/">
+        {% csrf_token %}
+        {{ form.as_p }}
 <div>
 
 
-    <label >
+    <label>
         Imię:
         <input type="text"
                name="userName">
     </label>
-
+<br>
     <label>
         Nazwisko:
         <input type="text"
                name="userSurname">
-</form>
+
+
     </label>
 
     <label>
+        <button type="submit" class="btn btn-primary" SUBMYT> </button>
         <input type="submit" value="Wyślij">
 
     </label>
+    </form>
+
 
     <label>
   <select name="gender">
