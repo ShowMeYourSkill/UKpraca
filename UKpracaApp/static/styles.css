@@ -1,13 +1,58 @@
 
 body{
-    background: pink;
-}
-div {
-
-  color: red;
-  border: 100px solid powderblue;
-  margin: 50px;
+    background: yellow;
 }
 
 
 
+
+h1 {
+border: 20px solid blue;
+font-family: "Lucida Console", "Courier New", monospace;
+color: blue;
+text-align: center;
+
+
+}
+
+h2 {
+border: 10px solid blue;
+font-family: "Lucida Console", "Courier New", monospace;
+color: blue;
+text-align: center;
+
+
+
+}
+
+.sidenav {
+            height:100%;
+            width:170px;
+            position: fixed;
+            z-index:1;
+            top:0;
+            left:0;
+            background-color:#111;
+            overflow-x: :hidden;
+            padding-top:20px;
+
+        }
+
+        .sidenav a {
+            padding:6px 8px 6px 16px;
+            text-decoration: none;
+            font-size:20px;
+            color: red;
+            display:block;
+            font-family: "Lucida Console", "Courier New", monospace;
+
+        }
+
+        .sidenav a:hover{
+            color:#f1f1f1;
+        }
+
+        .main{
+        margin-left:160px;
+        padding: 0px 10px;
+        }
