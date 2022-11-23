@@ -75,3 +75,12 @@ def get_user_name(request):
     else:
         form = UserForm()
     return render(request, "UKpracaApp/index.html")
+
+def display(request):
+    st = User.objects.get(id=35)
+    context = {
+        'imie' : st.userName,
+        'nazwisko' : st.userSurname
+
+    }
+    return render(request, 'UKpracaApp/home.html', context)

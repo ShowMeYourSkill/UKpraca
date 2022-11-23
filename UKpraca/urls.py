@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from UKpracaApp import views
+from UKpracaApp.views import display
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,7 +24,7 @@ urlpatterns = [
     path('', views.homepage, name="homepage"),
     path('base/', views.base_view),
     path('list/', views.get_user_name, name='insert_praca_user'),
-    path('home/', views.homepage),
+    path('home/', display),
     path('contact/', views.contact_view),
     path('create-user/', views.createUser, name="create-user"),
 
